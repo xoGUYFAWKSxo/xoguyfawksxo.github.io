@@ -1,5 +1,6 @@
 /**
  * Ram Raiders TuneUp — Waitlist Frontend Controller
+ * Build: v3 — Password-locked developer console
  */
 
 document.addEventListener('DOMContentLoaded', () => {
