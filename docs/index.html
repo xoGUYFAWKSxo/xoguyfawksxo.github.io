@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" href="assets/TuneUpIcon.png">
     
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css?v=2">
 </head>
 <body>
 
@@ -23,9 +23,14 @@
                 <img src="assets/TuneUpIcon.png" alt="Ram Raiders TuneUp Logo" class="logo-img">
                 <div class="logo-text">RAM RAIDERS <span>TUNEUP</span></div>
             </div>
-            <div class="status-badge">
-                <div class="status-dot"></div>
-                <span>v1.1 Alpha Waitlist</span>
+            <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+                <div class="status-badge" style="background: rgba(0, 240, 255, 0.08); border: 1px solid rgba(0, 240, 255, 0.2); color: var(--accent-cyan);">
+                    <span>Powered by Google Antigravity</span>
+                </div>
+                <div class="status-badge">
+                    <div class="status-dot"></div>
+                    <span>v1.1 Alpha Waitlist</span>
+                </div>
             </div>
         </div>
     </header>
@@ -438,6 +443,9 @@
                 <a href="#features">Features</a>
                 <a href="#interface-showcase">Screenshots</a>
             </div>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+                Built with the help of Google Antigravity.
+            </p>
             <p class="copyright">
                 &copy; 2026 Ram Raiders Software. All rights reserved. Registered Windows systems are property of Microsoft Corp.
             </p>
@@ -536,7 +544,7 @@
     <div class="drawer-backdrop" id="drawer-backdrop"></div>
 
     <!-- Core Scripts -->
-    <script src="js/database.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/database.js?v=2"></script>
+    <script src="js/app.js?v=2"></script>
 </body>
 </html>
