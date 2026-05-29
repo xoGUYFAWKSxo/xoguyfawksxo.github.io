@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
         activeIdx = index;
 
         if (galleryTrack) {
-            galleryTrack.style.transform = `translateX(-${activeIdx * 33.333}%)`;
+            galleryTrack.style.transform = `translateX(-${activeIdx * 25}%)`;
         }
 
         dots.forEach((dot, idx) => {
