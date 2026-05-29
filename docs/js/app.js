@@ -322,10 +322,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const dbSearchInput = document.getElementById('db-search');
 
     function openDevPanel() {
-        if (devDrawer && drawerBackdrop) {
-            devDrawer.classList.add('open');
-            drawerBackdrop.classList.add('open');
-            renderAdminConsole();
+        const password = prompt("Enter Developer Access Password:");
+        if (password === "Password4321") {
+            if (devDrawer && drawerBackdrop) {
+                devDrawer.classList.add('open');
+                drawerBackdrop.classList.add('open');
+                renderAdminConsole();
+            }
+        } else if (password !== null) {
+            alert("Access Denied: Invalid Password.");
         }
     }
 
