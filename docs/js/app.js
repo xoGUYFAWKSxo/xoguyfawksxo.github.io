@@ -323,15 +323,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const dbSearchInput = document.getElementById('db-search');
 
     function openDevPanel() {
-        const password = prompt("Enter Developer Access Password:");
-        if (password === "Password4321") {
-            if (devDrawer && drawerBackdrop) {
-                devDrawer.classList.add('open');
-                drawerBackdrop.classList.add('open');
-                renderAdminConsole();
-            }
-        } else if (password !== null) {
-            alert("Access Denied: Invalid Password.");
+        if (devDrawer && drawerBackdrop) {
+            devDrawer.classList.add('open');
+            drawerBackdrop.classList.add('open');
+            renderAdminConsole();
         }
     }
 
@@ -346,13 +341,24 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnCloseDev) btnCloseDev.addEventListener('click', closeDevPanel);
     if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeDevPanel);
 
-    // Fun easter egg: double-clicking logo opens admin console!
+    // Keyboard shortcut: Ctrl + Shift + D opens the developer console
+    document.addEventListener('keydown', (e) => {
+        if (e.ctrlKey && e.shiftKey && e.key === 'D') {
+            e.preventDefault();
+            if (devDrawer && devDrawer.classList.contains('open')) {
+                closeDevPanel();
+            } else {
+                openDevPanel();
+            }
+        }
+    });
+
+    // Fun easter egg: double-clicking logo also opens admin console
     if (appLogo) {
         appLogo.addEventListener('dblclick', (e) => {
             e.preventDefault();
             openDevPanel();
         });
-        // Make logo look interactive for this easter egg
         appLogo.style.cursor = 'pointer';
         appLogo.setAttribute('title', 'Double-click to open Admin DB Console');
     }
