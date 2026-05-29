@@ -1,6 +1,6 @@
 /**
  * Ram Raiders TuneUp — Waitlist Frontend Controller
- * Build: v3 — Password-locked developer console
+ * Build: v5 — Button removed, Ctrl+Shift+D keybind only
  */
 
 document.addEventListener('DOMContentLoaded', () => {
