@@ -25,10 +25,10 @@ const DB_CONFIG = {
 };
 
 // Key used for localStorage
-const LOCAL_STORAGE_KEY = 'ram_raiders_waitlist_signups';
-const LOCAL_SEATS_KEY = 'ram_raiders_waitlist_seats_count';
+const LOCAL_STORAGE_KEY = 'ram_raiders_waitlist_v2_signups';
+const LOCAL_SEATS_KEY = 'ram_raiders_waitlist_v2_seats_count';
 const DEFAULT_LIMIT = 10000;
-const INITIAL_SEATS_TAKEN = 9142; // Out of 10000
+const INITIAL_SEATS_TAKEN = 6014; // Out of 10000, ~60% filled
 
 // Mock data to pre-populate the Developer Console on first load (for visualization)
 const MOCK_SIGNUPS = [

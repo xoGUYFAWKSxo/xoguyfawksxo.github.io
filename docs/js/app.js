@@ -1,6 +1,6 @@
 /**
  * Ram Raiders TuneUp — Waitlist Frontend Controller
- * Build: v5 — Button removed, Ctrl+Shift+D keybind only
+ * Build: v6 — Restored password lock with Ctrl+Shift+D trigger
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentCount < seatsLimit && Math.random() > 0.7) { // 30% chance every 20s
             const increment = Math.floor(Math.random() * 2) + 1;
             const newCount = Math.min(seatsLimit, currentCount + increment);
-            localStorage.setItem('ram_raiders_waitlist_seats_count', newCount.toString());
+            localStorage.setItem('ram_raiders_waitlist_v2_seats_count', newCount.toString());
             updateSeatsUI(true);
             
             // Re-render admin stats if drawer is open
@@ -323,10 +323,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const dbSearchInput = document.getElementById('db-search');
 
     function openDevPanel() {
-        if (devDrawer && drawerBackdrop) {
-            devDrawer.classList.add('open');
-            drawerBackdrop.classList.add('open');
-            renderAdminConsole();
+        const password = prompt("Enter Developer Access Password:");
+        if (password === "Password4321") {
+            if (devDrawer && drawerBackdrop) {
+                devDrawer.classList.add('open');
+                drawerBackdrop.classList.add('open');
+                renderAdminConsole();
+            }
+        } else if (password !== null) {
+            alert("Access Denied: Invalid Password.");
         }
     }
 
